@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 
-type ListType = "horizontal" | "vertical";
+export type ListType = "horizontal" | "vertical";
 
-interface ListStyle {
+export interface ListStyle {
   type?: ListType;
   spacing?: string;
 }
@@ -24,16 +24,26 @@ const ListItem = styled.div<{ spacing?: string }>`
   padding: ${({ spacing }) => spacing || "12px"};
 `;
 
+const getStyle = (style?: ListStyle): ListStyle => {
+  const themeContext = useContext(ThemeContext);
+
+  return {
+    type: style?.type,
+    spacing: themeContext?.list?.spacing || style?.spacing,
+  };
+};
+
 export default function List<T>({
   collection,
   render,
   getKey,
   style,
 }: ListProps<T>) {
+  const { type, spacing } = getStyle(style);
   return (
-    <ListWrapper type={style?.type}>
+    <ListWrapper type={type}>
       {collection.map((item) => (
-        <ListItem spacing={style?.spacing} key={getKey(item)}>
+        <ListItem spacing={spacing} key={getKey(item)}>
           {render(item)}
         </ListItem>
       ))}
