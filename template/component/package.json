@@ -8,6 +8,14 @@
   "directories": {
     "build": "build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodrigoSaint/sharpening.git",
+    "directory": "packages/{{underscore name}}"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "build"
   ],
