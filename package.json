@@ -5,7 +5,9 @@
     "build": "lerna run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "plop": "plop"
+    "plop": "plop",
+    "test": "lerna run test",
+    "release": "npm test && npm run build && lerna publish"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
