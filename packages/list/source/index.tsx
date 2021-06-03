@@ -17,6 +17,7 @@ interface ListProps<T> {
 
 const ListWrapper = styled.div<{ type?: ListType }>`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: ${({ type }) => (type === "vertical" ? "column" : "row")};
 `;
 
