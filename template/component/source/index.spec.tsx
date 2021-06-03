@@ -1,4 +1,4 @@
-import {{underscore name}} from "./index";
+import {{capital name}} from "./index";
 
 describe("{{capital name}}", () => {
 

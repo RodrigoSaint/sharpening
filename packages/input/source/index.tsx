@@ -1,5 +1,6 @@
-import React, { InputHTMLAttributes, useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
+import { getComputedStyle } from "@rodrigosaint/style-utils";
+import React, { InputHTMLAttributes, useContext } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   style?: InputStyle;
@@ -30,16 +31,9 @@ const defaultStyle: InputStyle = {
   padding: "8px 12px",
 };
 
-function getComputedStyle<T>(theme: T, param: T, defaultStyle: T) {
-  return (property: keyof T) =>
-    (theme && theme[property]) ||
-    (param && param[property]) ||
-    defaultStyle[property];
-}
-
 function getStyle(style?: InputStyle): InputStyle {
   const theme = useContext<{ input: InputStyle }>(ThemeContext);
-  const computeStyle = getComputedStyle(theme?.input, style, defaultStyle);
+  const computeStyle = getComputedStyle(style, theme?.input, defaultStyle);
 
   return {
     border: computeStyle("border"),

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
+import { getComputedStyle } from "@rodrigosaint/style-utils";
 
 export type ListType = "horizontal" | "vertical";
 
@@ -25,12 +26,18 @@ const ListItem = styled.div<{ spacing?: string }>`
   padding: ${({ spacing }) => spacing || "12px"};
 `;
 
+const defaultStyle: ListStyle = {
+  type: "horizontal",
+  spacing: "12px",
+};
+
 const getStyle = (style?: ListStyle): ListStyle => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useContext(ThemeContext);
+  const computeStyle = getComputedStyle(style, theme?.list, defaultStyle);
 
   return {
-    type: style?.type,
-    spacing: themeContext?.list?.spacing || style?.spacing,
+    type: computeStyle("type"),
+    spacing: computeStyle("spacing"),
   };
 };
 
