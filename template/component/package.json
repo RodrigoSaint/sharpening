@@ -1,0 +1,18 @@
+{
+  "name": "@sharpening/{{underscore name}}",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "directories": {
+    "build": "build"
+  },
+  "files": [
+    "build"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  }
+}
