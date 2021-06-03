@@ -6,21 +6,28 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "plop": "plop",
-    "test": "lerna run test",
-    "release": "npm test && npm run build && lerna publish"
+    "test": "jest packages/*",
+    "release": "lerna run test && lerna run build && lerna publish"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
     "@types/styled-components": "^5.1.9",
+    "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
+    "jest": "^27.0.4",
     "lerna": "^4.0.0",
     "plop": "^2.7.4",
     "react": "^17.0.2",
