@@ -7,6 +7,9 @@
     "build-storybook": "build-storybook",
     "plop": "plop"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@storybook/addon-actions": "^6.2.9",
