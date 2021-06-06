@@ -2,7 +2,12 @@ import React from "react";
 import { Meta } from "@storybook/react";
 import { withKnobs, text, optionsKnob } from "@storybook/addon-knobs";
 
-import { Paragraph, TextColor } from "../packages/text-essentials/source";
+import {
+  Paragraph,
+  TextColor,
+  Label,
+  Title,
+} from "../packages/text-essentials/source";
 
 export default {
   title: "TextEssentials",
@@ -17,13 +22,37 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh ex, tristi
 export const DefaultParagraph = () => (
   <Paragraph
     style={{
-      fontSize: text("font size", "16px"),
-      fontWeight: text("fontsize", "normal"),
-      lineHeight: text("lineheight", "1.5em"),
+      fontSize: text("font size", ""),
+      fontWeight: text("fontsize", ""),
+      lineHeight: text("lineheight", ""),
     }}
   >
     {text("text", loremIpsum)}
   </Paragraph>
+);
+
+export const DefaultLabel = () => (
+  <Label
+    style={{
+      fontSize: text("font size", ""),
+      fontWeight: text("fontsize", ""),
+      lineHeight: text("lineheight", ""),
+    }}
+  >
+    {text("text", "name")}
+  </Label>
+);
+
+export const DefaultTitle = () => (
+  <Title
+    style={{
+      fontSize: text("font size", ""),
+      fontWeight: text("fontsize", ""),
+      lineHeight: text("lineheight", ""),
+    }}
+  >
+    {text("text", "A important title")}
+  </Title>
 );
 
 export const FadedColor = () => (
