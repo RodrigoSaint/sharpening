@@ -4,7 +4,7 @@ module.exports = {
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
-  addons: [],
+  addons: ["@storybook/addon-knobs"],
   webpackFinal: (config) => {
     config.module.rules[0].use[0].options.overrides.pop();
     config.plugins = config.plugins.filter(
