@@ -15,7 +15,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nibh ex, tristi
 `;
 
 export const DefaultParagraph = () => (
-  <Paragraph>{text("text", loremIpsum)}</Paragraph>
+  <Paragraph
+    style={{
+      fontSize: text("font size", "16px"),
+      fontWeight: text("fontsize", "normal"),
+      lineHeight: text("lineheight", "1.5em"),
+    }}
+  >
+    {text("text", loremIpsum)}
+  </Paragraph>
 );
 
 export const FadedColor = () => (

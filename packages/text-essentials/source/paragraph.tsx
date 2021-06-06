@@ -43,6 +43,7 @@ const BaseParagraph = styled.p<TextStyle>`
   font-family: ${(props) => props.fontFamily};
   font-size: ${(props) => props.fontSize};
   line-height: ${(props) => props.lineHeight};
+  font-weight: ${(props) => props.fontWeight};
 `;
 
 function getParagraphStyles(style?: TextStyle): TextStyle {
@@ -57,6 +58,7 @@ function getParagraphStyles(style?: TextStyle): TextStyle {
     fontFamily: computeStyle("fontFamily"),
     fontSize: computeStyle("fontSize"),
     lineHeight: computeStyle("lineHeight"),
+    fontWeight: computeStyle("fontWeight"),
   };
 }
 
