@@ -1,8 +1,8 @@
-import { ReactNode, useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React, { ReactNode, useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 import { getComputedStyle } from "@rodrigosaint/style-utils";
 
-import { TextColorStyle } from "./color";
+import { TextColor, TextColorStyle } from "./color";
 
 export interface TextStyle extends TextColorStyle {
   fontSize?: string;
@@ -38,4 +38,21 @@ export function getTextStyle(
     lineHeight: computeStyle("lineHeight"),
     fontWeight: computeStyle("fontWeight"),
   };
+}
+
+const BaseText = styled.span<TextStyle>`
+  font-family: ${(props) => props.fontFamily};
+  font-size: ${(props) => props.fontSize};
+  line-height: ${(props) => props.lineHeight};
+  font-weight: ${(props) => props.fontWeight};
+`;
+
+export function Text({ children, style }: TextProps) {
+  return (
+    <TextColor style={style}>
+      <BaseText {...getTextStyle(style, undefined, "text")}>
+        {children}
+      </BaseText>
+    </TextColor>
+  );
 }
