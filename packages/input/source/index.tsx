@@ -2,8 +2,10 @@ import styled, { ThemeContext } from "styled-components";
 import { getComputedStyle } from "@rodrigosaint/style-utils";
 import React, { InputHTMLAttributes, useContext } from "react";
 
+type RefCallback = (instance: any) => void;
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   style?: InputStyle;
+  ref?: React.Ref<HTMLInputElement> | RefCallback;
 }
 
 interface InputStyle {
@@ -18,6 +20,8 @@ const BaseInput = styled.input<InputStyle>`
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
   border-radius: ${(props) => props.radius};
+  width: 100%;
+  box-sizing: border-box;
 
   &:focus {
     border: ${(props) => props.borderFocus};
@@ -43,6 +47,6 @@ function getStyle(style?: InputStyle): InputStyle {
   };
 }
 
-export default function Input({ style }: InputProps) {
-  return <BaseInput {...getStyle(style)} />;
+export default function Input({ style, ...props }: InputProps) {
+  return <BaseInput {...getStyle(style)} {...props} />;
 }
