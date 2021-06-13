@@ -6,14 +6,16 @@ import Space, { SpaceDefinition } from "@rodrigosaint/space";
 import { getComputedStyle } from "@rodrigosaint/style-utils";
 import List, { ListStyle, ListProps } from "@rodrigosaint/list";
 
-interface ListSelectionStyle extends ListStyle {
+export interface ListSelectionStyle extends ListStyle {
   padding?: SpaceDefinition;
   iconSize?: number;
   iconColor?: string;
 }
 
-interface ListSelectionProps<T> extends ListProps<T> {
+export interface ListSelectionProps<T> extends ListProps<T> {
   style?: ListSelectionStyle;
+  selected?: string;
+  onSelected: (selected: string) => void;
 }
 
 function getStyle(style?: ListSelectionStyle): ListSelectionStyle {
@@ -32,26 +34,38 @@ function getStyle(style?: ListSelectionStyle): ListSelectionStyle {
 }
 
 export default function ListSelection<T>(props: ListSelectionProps<T>) {
-  const [selected, setSelected] = React.useState<string>();
+  const [selected, setSelected] = React.useState<string>(props.selected);
   const style = getStyle(props.style);
-  console.log(style);
+
+  const select = React.useCallback(
+    (item: string) => {
+      setSelected(item);
+      props.onSelected(item);
+    },
+    [props.onSelected]
+  );
+
   return (
     <List
       {...props}
       render={(item) => (
-        <StackOption
-          onClick={() => setSelected(props.getKey(item))}
-          position="top-right"
-          renderOption={() =>
-            selected === props.getKey(item) ? (
-              <Space padding={style.padding}>
-                <FaCheckCircle color={style.iconColor} size={style.iconSize} />
-              </Space>
-            ) : null
-          }
-        >
-          {props.render(item)}
-        </StackOption>
+        <div onClick={() => select(props.getKey(item))}>
+          <StackOption
+            position="top-right"
+            renderOption={() =>
+              selected === props.getKey(item) ? (
+                <Space padding={style.padding}>
+                  <FaCheckCircle
+                    color={style.iconColor}
+                    size={style.iconSize}
+                  />
+                </Space>
+              ) : null
+            }
+          >
+            {props.render(item)}
+          </StackOption>
+        </div>
       )}
     />
   );

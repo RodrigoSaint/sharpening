@@ -7,6 +7,10 @@ interface StackOptionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: any;
   renderOption: () => any;
   position: OptionPosition;
+  optionStyle?: {
+    marginTop?: string;
+    full?: boolean;
+  };
 }
 
 function getPosition(position: OptionPosition) {
@@ -24,10 +28,16 @@ function getPosition(position: OptionPosition) {
   }
 }
 
-const Option = styled.div<{ position: OptionPosition }>`
+const Option = styled.div<{
+  position: OptionPosition;
+  marginTop: string;
+  full: boolean;
+}>`
   position: absolute;
   z-index: 1;
-  ${(props) => getPosition(props.position)}
+  margin-top: ${(props) => props.marginTop || 0};
+  width: ${(props) => (props.full ? "100%" : "inherit")};
+  ${(props) => getPosition(props.position)};
 `;
 
 const Main = styled.div`
@@ -39,11 +49,18 @@ export default function StackOption({
   children,
   renderOption,
   position,
+  optionStyle,
   ...props
 }: StackOptionProps) {
   return (
     <Main {...props}>
-      <Option position={position}>{renderOption()}</Option>
+      <Option
+        position={position}
+        marginTop={optionStyle?.marginTop}
+        full={optionStyle?.full}
+      >
+        {renderOption()}
+      </Option>
       {children}
     </Main>
   );

@@ -11,6 +11,7 @@ export default {
 
 export const DefaultListSelection = () => (
   <ListSelection
+    onSelected={() => {}}
     collection={["teste 1", "teste 2", "teste 3"]}
     render={(item) => <Card style={{ padding: 5 }}>{item.toUpperCase()}</Card>}
     getKey={(item) => item}
