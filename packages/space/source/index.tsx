@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-type Scale =
+export type Scale =
   | 0
   | 1
   | 2
@@ -20,16 +20,19 @@ type Scale =
   | 15
   | 20;
 
-type SpaceGranularDefinition = {
+export type SpaceGranularDefinition = {
   top?: Scale;
   bottom?: Scale;
   left?: Scale;
   right?: Scale;
 };
 
-type SpaceAxisDefinition = { vertical: Scale; horizontal: Scale };
+export type SpaceAxisDefinition = { vertical: Scale; horizontal: Scale };
 
-type SpaceDefinition = Scale | SpaceAxisDefinition | SpaceGranularDefinition;
+export type SpaceDefinition =
+  | Scale
+  | SpaceAxisDefinition
+  | SpaceGranularDefinition;
 
 interface SpaceProps {
   children: any;
