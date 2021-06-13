@@ -9,7 +9,7 @@ export interface ListStyle {
   spacing?: string;
 }
 
-interface ListProps<T> {
+export interface ListProps<T> {
   collection: Array<T>;
   render: (item: T) => any;
   getKey: (item: T) => string;

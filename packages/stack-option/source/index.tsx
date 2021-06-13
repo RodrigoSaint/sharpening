@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type OptionPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
-interface StackOptionProps {
+interface StackOptionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: any;
   renderOption: () => any;
   position: OptionPosition;
@@ -39,9 +39,10 @@ export default function StackOption({
   children,
   renderOption,
   position,
+  ...props
 }: StackOptionProps) {
   return (
-    <Main>
+    <Main {...props}>
       <Option position={position}>{renderOption()}</Option>
       {children}
     </Main>
