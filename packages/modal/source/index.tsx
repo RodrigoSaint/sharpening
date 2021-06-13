@@ -9,7 +9,7 @@ interface ModalProps {
   header?: string;
   renderTrigger?: () => any;
   renderContent: (close: () => void) => any;
-  style: ModalStyle;
+  style?: ModalStyle;
 }
 
 interface ModalStyle {
