@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@rodrigosaint/button": "^0.0.1",
+    "@rodrigosaint/list": "^0.0.6",
     "@rodrigosaint/space": "^0.0.6",
     "@rodrigosaint/text-essentials": "^0.0.6"
   }
