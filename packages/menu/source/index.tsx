@@ -14,8 +14,8 @@ interface MenuStyle {
 
 interface MenuProps {
   style?: MenuStyle;
-  logo: React.ReactNode;
-  children: React.ReactNode;
+  logo: React.ReactElement;
+  children: React.ReactElement;
 }
 
 const MenuHeader = styled.header<MenuStyle>`

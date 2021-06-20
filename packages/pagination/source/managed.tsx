@@ -13,7 +13,7 @@ interface Page<T> {
 interface ManagedPaginationProps<T> extends Omit<ListProps<T>, "collection"> {
   query: (pageNumber: Number) => Promise<Page<T>>;
   onError?: (error) => any;
-  renderSkeleton?: () => React.ReactNode;
+  renderSkeleton?: () => React.ReactElement;
   skeletonCount?: number;
 }
 
