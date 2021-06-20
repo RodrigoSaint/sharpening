@@ -1,0 +1,30 @@
+{
+  "name": "@rodrigosaint/menu",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "directories": {
+    "build": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodrigoSaint/sharpening.git",
+    "directory": "packages/menu"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "build"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "dependencies": {
+    "@rodrigosaint/style-utils": "^0.0.6",
+    "react-icons": "^4.2.0"
+  }
+}
