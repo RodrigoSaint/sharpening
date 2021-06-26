@@ -11,7 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 interface InputStyle {
   border?: string;
   borderFocus?: string;
-  radius?: string;
+  borderRadius?: string;
   padding?: string;
 }
 
@@ -19,7 +19,7 @@ const BaseInput = styled.input<InputStyle>`
   outline: none;
   border: ${(props) => props.border};
   padding: ${(props) => props.padding};
-  border-radius: ${(props) => props.radius};
+  border-radius: ${(props) => props.borderRadius};
   width: 100%;
   box-sizing: border-box;
 
@@ -31,7 +31,7 @@ const BaseInput = styled.input<InputStyle>`
 const defaultStyle: InputStyle = {
   border: "1px solid lightgray",
   borderFocus: "1px solid gray",
-  radius: "10px",
+  borderRadius: "10px",
   padding: "8px 12px",
 };
 
@@ -42,7 +42,7 @@ function getStyle(style?: InputStyle): InputStyle {
   return {
     border: computeStyle("border"),
     borderFocus: computeStyle("borderFocus"),
-    radius: computeStyle("radius"),
+    borderRadius: computeStyle("borderRadius"),
     padding: computeStyle("padding"),
   };
 }

@@ -1,4 +1,8 @@
 import Pagination from "./basic";
-export { default as ManagedPagination } from "./managed";
+export {
+  default as ManagedPagination,
+  ManagedPaginationProps,
+  Page,
+} from "./managed";
 
 export default Pagination;

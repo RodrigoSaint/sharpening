@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import { useCallback } from "react";
 import { useEffect } from "react";
 
-interface Page<T> {
+export interface Page<T> {
   collection: Array<T>;
   currentPage: number;
   pageCount: number;
 }
 
-interface ManagedPaginationProps<T> extends Omit<ListProps<T>, "collection"> {
+export interface ManagedPaginationProps<T>
+  extends Omit<ListProps<T>, "collection"> {
   query: (pageNumber: Number) => Promise<Page<T>>;
   onError?: (error) => any;
   renderSkeleton?: () => React.ReactElement;

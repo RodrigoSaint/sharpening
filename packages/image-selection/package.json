@@ -1,0 +1,34 @@
+{
+  "name": "@rodrigosaint/image-selection",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "directories": {
+    "build": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodrigoSaint/sharpening.git",
+    "directory": "packages/image-selection"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "build"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "dependencies": {
+    "@rodrigosaint/button": "^0.0.1",
+    "@rodrigosaint/input": "^0.0.6",
+    "@rodrigosaint/managed-image": "^0.0.1",
+    "@rodrigosaint/modal": "^0.0.1",
+    "@rodrigosaint/pagination": "^0.0.1",
+    "@rodrigosaint/text-essentials": "^0.0.6"
+  }
+}
