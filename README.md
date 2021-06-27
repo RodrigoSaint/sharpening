@@ -6,3 +6,4 @@
 [] List Item selection
 [] Audio Input (upload + google translator)
 [] Footer
+[] Error messages
