@@ -2,6 +2,7 @@ import React from "react";
 import { Meta } from "@storybook/react";
 
 import ImageSelection from "../packages/image-selection/source";
+import { Label } from "../packages/text-essentials/source";
 
 export default {
   title: "ImageSelection",
@@ -30,5 +31,8 @@ export const DefaultImageSelection = () => (
     getKey={(image) => image}
     getImageUrl={(image) => image}
     onSelected={console.log}
+    searchButtonContent="Search"
+    searchLabel={<Label>Search</Label>}
+    header={<Label>Find an image</Label>}
   />
 );

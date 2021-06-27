@@ -10,6 +10,7 @@ interface ImageSelectionProps<T>
   extends Omit<ImageSelectionModalContentProps<T>, "close"> {
   renderWithoutImage: () => React.ReactElement;
   getImageUrl: (item: T) => string;
+  header: string | React.ReactElement;
 }
 
 export default function ImageSelection<T>(props: ImageSelectionProps<T>) {
@@ -40,7 +41,7 @@ export default function ImageSelection<T>(props: ImageSelectionProps<T>) {
             close={close}
           />
         )}
-        header="Message"
+        header={props.header}
       />
     </>
   );

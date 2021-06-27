@@ -1,17 +1,20 @@
 import React from "react";
 import Input from "@rodrigosaint/input";
 import Button from "@rodrigosaint/button";
-import { Label } from "@rodrigosaint/text-essentials";
 import {
   ManagedPagination,
   ManagedPaginationProps,
+  Page,
 } from "@rodrigosaint/pagination";
 
 export interface ImageSelectionModalContentProps<T>
-  extends Omit<ManagedPaginationProps<T>, "render"> {
+  extends Omit<ManagedPaginationProps<T>, "render" | "query"> {
   onSelected: (item: T) => any;
   render: (item: T, onSelected: (item: T) => any) => React.ReactElement;
   close: () => void;
+  query: (text: string, pageNumber: Number) => Promise<Page<T>>;
+  searchButtonContent: string | React.ReactElement;
+  searchLabel: string | React.ReactElement;
 }
 
 const style = {
@@ -23,14 +26,19 @@ const style = {
   },
   button: {
     borderRadius: "0 10px 10px 0",
+    boxShadow: "none",
   },
 };
 
 export default function ImageSelectionModalContent<T>({
   onSelected,
   close,
+  query: baseQuery,
   ...props
 }: ImageSelectionModalContentProps<T>) {
+  const [text, setText] = React.useState<string>();
+  const inputRef = React.useRef<HTMLInputElement>();
+
   const render = React.useCallback(
     (item: T) =>
       props.render(item, () => {
@@ -40,19 +48,32 @@ export default function ImageSelectionModalContent<T>({
     [props.render, onSelected, close]
   );
 
+  const onSearch = React.useCallback(() => setText(inputRef.current.value), [
+    inputRef,
+  ]);
+
+  const query = React.useCallback(
+    (pageNumber: Number) => baseQuery(text, pageNumber),
+    [baseQuery, text]
+  );
+
   return (
     <div>
-      <Label>Search image</Label>
+      {props.searchLabel}
       <div style={style.div}>
-        <Input style={style.input} />
-        <Button style={style.button}>Search</Button>
+        <Input ref={inputRef} style={style.input} />
+        <Button style={style.button} onClick={onSearch}>
+          {props.searchButtonContent}
+        </Button>
       </div>
-      <ManagedPagination
-        {...props}
-        query={props.query}
-        getKey={props.getKey}
-        render={render}
-      />
+      {text && (
+        <ManagedPagination
+          {...props}
+          query={query}
+          getKey={props.getKey}
+          render={render}
+        />
+      )}
     </div>
   );
 }
