@@ -36,7 +36,7 @@ const Option = styled.div<{
   position: absolute;
   z-index: 1;
   margin-top: ${(props) => props.marginTop || 0};
-  width: ${(props) => (props.full ? "100%" : "inherit")};
+  width: ${(props) => (props.full ? "100%" : "initial")};
   ${(props) => getPosition(props.position)};
 `;
 
