@@ -1,0 +1,7 @@
+yarn create next-app --typescript
+DELETE pages/index.tsx
+DELETE pages/_app.tsx
+DELETE pages/api/hello.tsx
+DELETE styles
+CREATE .yarnrc
+INSTALL @rodrigosaint/menu, styled-components

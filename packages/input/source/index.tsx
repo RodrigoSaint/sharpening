@@ -1,6 +1,6 @@
 import styled, { ThemeContext } from "styled-components";
 import { getComputedStyle } from "@rodrigosaint/style-utils";
-import React, { InputHTMLAttributes, useContext } from "react";
+import React, { InputHTMLAttributes, useContext, forwardRef } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   style?: InputStyle;
@@ -45,7 +45,7 @@ function getStyle(style?: InputStyle): InputStyle {
   };
 }
 
-const Input = React.forwardRef(
+const Input = forwardRef(
   ({ style, ...props }: InputProps, ref: React.Ref<HTMLInputElement>) => (
     <BaseInput {...getStyle(style)} {...props} ref={ref} />
   )
