@@ -3,7 +3,7 @@
   "version": "0.0.8",
   "main": "./build/index.js",
   "scripts": {
-    "build": "tsc --emitDeclarationOnly && node ../../build.js"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
