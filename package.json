@@ -8,7 +8,7 @@
     "build-storybook": "build-storybook",
     "plop": "plop",
     "test": "jest packages/*",
-    "release": "npm run test && lerna run build && lerna publish"
+    "release": "lerna run build && lerna publish"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
