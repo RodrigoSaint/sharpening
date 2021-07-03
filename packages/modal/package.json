@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/modal",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc --emitDeclarationOnly && node ../../build.js"
@@ -24,8 +24,8 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/space": "^0.0.7",
-    "@rodrigosaint/style-utils": "^0.0.7",
+    "@rodrigosaint/space": "^0.0.8",
+    "@rodrigosaint/style-utils": "^0.0.8",
     "react-icons": "^4.2.0"
   }
 }

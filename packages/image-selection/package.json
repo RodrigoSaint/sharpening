@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/image-selection",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc --emitDeclarationOnly && node ../../build.js"
@@ -24,12 +24,12 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/button": "^0.0.7",
-    "@rodrigosaint/input": "^0.0.7",
-    "@rodrigosaint/managed-image": "^0.0.7",
-    "@rodrigosaint/modal": "^0.0.7",
-    "@rodrigosaint/pagination": "^0.0.7",
-    "@rodrigosaint/text-essentials": "^0.0.7",
+    "@rodrigosaint/button": "^0.0.8",
+    "@rodrigosaint/input": "^0.0.8",
+    "@rodrigosaint/managed-image": "^0.0.8",
+    "@rodrigosaint/modal": "^0.0.8",
+    "@rodrigosaint/pagination": "^0.0.8",
+    "@rodrigosaint/text-essentials": "^0.0.8",
     "react-hook-form": "^7.9.0"
   }
 }

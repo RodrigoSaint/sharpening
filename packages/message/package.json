@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/message",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc --emitDeclarationOnly && node ../../build.js"
@@ -25,10 +25,10 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/list": "^0.0.7",
-    "@rodrigosaint/stack-option": "^0.0.7",
-    "@rodrigosaint/style-utils": "^0.0.7",
-    "@rodrigosaint/text-essentials": "^0.0.7",
+    "@rodrigosaint/list": "^0.0.8",
+    "@rodrigosaint/stack-option": "^0.0.8",
+    "@rodrigosaint/style-utils": "^0.0.8",
+    "@rodrigosaint/text-essentials": "^0.0.8",
     "react-icons": "^4.2.0"
   },
   "devDependencies": {
