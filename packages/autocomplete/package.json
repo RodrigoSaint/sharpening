@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/autocomplete",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc"
@@ -24,8 +24,8 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/input": "^0.0.8",
-    "@rodrigosaint/list-selection": "^0.0.8",
-    "@rodrigosaint/stack-option": "^0.0.8"
+    "@rodrigosaint/input": "^0.0.9",
+    "@rodrigosaint/list-selection": "^0.0.9",
+    "@rodrigosaint/stack-option": "^0.0.9"
   }
 }

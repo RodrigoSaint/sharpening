@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/menu",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc"
@@ -24,7 +24,7 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/style-utils": "^0.0.8",
+    "@rodrigosaint/style-utils": "^0.0.9",
     "react-icons": "^4.2.0"
   }
 }
