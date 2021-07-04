@@ -3,7 +3,7 @@
   "version": "0.0.9",
   "main": "./build/index.js",
   "scripts": {
-    "build": "tsc --emitDeclarationOnly && tsc"
+    "build": "tsc"
   },
   "directories": {
     "build": "build"
