@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/input",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "./build/index.js",
   "scripts": {
     "build": "tsc"
@@ -24,6 +24,6 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/style-utils": "^0.0.9"
+    "@rodrigosaint/style-utils": "^0.0.10"
   }
 }
