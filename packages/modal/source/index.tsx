@@ -7,8 +7,8 @@ import { getSpace, SpaceDefinition } from "@rodrigosaint/space";
 interface ModalProps {
   isOpen?: boolean;
   header?: string | React.ReactNode;
-  renderTrigger?: () => any;
-  renderContent: (close: () => void) => any;
+  renderTrigger?: () => React.ReactNode;
+  renderContent: (close: () => void) => React.ReactNode;
   style?: ModalStyle;
 }
 

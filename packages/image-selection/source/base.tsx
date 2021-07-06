@@ -31,11 +31,12 @@ export default function ImageSelection<T>(props: ImageSelectionProps<T>) {
     <>
       <Modal
         renderTrigger={() => (
-          <ManagedImage
-            src={src}
-            renderWithoutImage={props.renderWithoutImage}
-            renderOnError={props.renderWithoutImage}
-          />
+          // <ManagedImage
+          //   src={src}
+          //   renderWithoutImage={props.renderWithoutImage}
+          //   renderOnError={props.renderWithoutImage}
+          // />
+          <span></span>
         )}
         renderContent={(close) => (
           <ImageSelectionModalContent
