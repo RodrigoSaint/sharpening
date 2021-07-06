@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/modal",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack --config ../../webpack.config.js"
@@ -24,8 +24,8 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/space": "^0.0.10",
-    "@rodrigosaint/style-utils": "^0.0.10",
+    "@rodrigosaint/space": "^0.0.11",
+    "@rodrigosaint/style-utils": "^0.0.11",
     "react-icons": "^4.2.0"
   }
 }
