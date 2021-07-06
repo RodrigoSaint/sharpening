@@ -8,9 +8,9 @@ import ImageSelectionModalContent, {
 
 export interface ImageSelectionProps<T>
   extends Omit<ImageSelectionModalContentProps<T>, "close"> {
-  renderWithoutImage: () => React.ReactElement;
+  renderWithoutImage: () => React.ReactNode;
   getImageUrl: (item: T) => string;
-  header: string | React.ReactElement;
+  header: string | React.ReactNode;
   initialValue?: T;
 }
 

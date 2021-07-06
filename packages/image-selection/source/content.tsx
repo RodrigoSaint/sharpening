@@ -10,11 +10,11 @@ import {
 export interface ImageSelectionModalContentProps<T>
   extends Omit<ManagedPaginationProps<T>, "render" | "query"> {
   onSelected: (item: T) => any;
-  render: (item: T, onSelected: (item: T) => any) => React.ReactElement;
+  render: (item: T, onSelected: (item: T) => any) => React.ReactNode;
   close: () => void;
   query: (text: string, pageNumber: Number) => Promise<Page<T>>;
-  searchButtonContent: string | React.ReactElement;
-  searchLabel: string | React.ReactElement;
+  searchButtonContent: string | React.ReactNode;
+  searchLabel: string | React.ReactNode;
 }
 
 const style = {

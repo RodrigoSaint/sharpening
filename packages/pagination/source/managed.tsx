@@ -14,7 +14,7 @@ export interface ManagedPaginationProps<T>
   extends Omit<ListProps<T>, "collection"> {
   query: (pageNumber: Number) => Promise<Page<T>>;
   onError?: (error) => any;
-  renderSkeleton?: () => React.ReactElement;
+  renderSkeleton?: () => React.ReactNode;
   skeletonCount?: number;
 }
 

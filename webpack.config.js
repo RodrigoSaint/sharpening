@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: path.resolve(process.cwd(), "source/index.tsx"),
+  mode: "production",
   module: {
     rules: [
       {

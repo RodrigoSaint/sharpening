@@ -2,11 +2,11 @@ import React, { ImgHTMLAttributes } from "react";
 import { useState } from "react";
 
 interface ManagedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-  renderWithoutImage?: () => React.ReactElement;
-  renderOnError?: () => React.ReactElement;
+  renderWithoutImage?: () => React.ReactNode;
+  renderOnError?: () => React.ReactNode;
   renderCustomImage?: (
     props: ImgHTMLAttributes<HTMLImageElement>
-  ) => React.ReactElement;
+  ) => React.ReactNode;
 }
 
 export default function ManagedImage({

@@ -5,7 +5,7 @@ import { Text, Paragraph } from "@rodrigosaint/text-essentials";
 
 export interface MessageProps {
   header: string;
-  description: string | React.ReactElement;
+  description: string | React.ReactNode;
   style?: MessageStyle;
 }
 

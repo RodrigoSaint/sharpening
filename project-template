@@ -4,4 +4,5 @@ DELETE pages/_app.tsx
 DELETE pages/api/hello.tsx
 DELETE styles
 CREATE .yarnrc
-INSTALL @rodrigosaint/menu, styled-components
+INSTALL @rodrigosaint/menu, @rodrigosaint/page-frame, styled-components
+INSTALL @types/styled-components
