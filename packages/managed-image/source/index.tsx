@@ -1,5 +1,4 @@
-import React, { ImgHTMLAttributes } from "react";
-import { useState } from "react";
+import React, { ImgHTMLAttributes, useState } from "react";
 
 interface ManagedImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   renderWithoutImage?: () => React.ReactNode;

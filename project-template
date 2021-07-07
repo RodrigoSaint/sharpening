@@ -1,8 +1,8 @@
 yarn create next-app --typescript
-DELETE pages/index.tsx
-DELETE pages/_app.tsx
+REPLACE pages/index.tsx, pages/_app.tsx
 DELETE pages/api/hello.tsx
-DELETE styles
+DELETE styles/Home.module.css
 CREATE .yarnrc
 INSTALL @rodrigosaint/menu, @rodrigosaint/page-frame, styled-components
 INSTALL @types/styled-components
+    

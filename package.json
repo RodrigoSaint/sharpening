@@ -4,6 +4,7 @@
   "scripts": {
     "build": "lerna run build",
     "build:local": "lerna exec 'tsc'",
+    "ask": "lerna exec 'npm start' --scope @rodrigosaint/entity-generator",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "plop": "plop",
@@ -25,7 +26,7 @@
     "@storybook/react": "^6.2.9",
     "@testing-library/react": "^11.2.7",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.6.1",
+    "@types/node": "^16.0.1",
     "@types/styled-components": "^5.1.9",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
@@ -39,6 +40,7 @@
     "react-i18next": "^11.10.0",
     "styled-components": "^5.3.0",
     "ts-loader": "^9.2.3",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.2",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2"

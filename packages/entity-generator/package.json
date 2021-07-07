@@ -1,0 +1,27 @@
+{
+  "name": "@rodrigosaint/entity-generator",
+  "version": "0.0.1",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node --project ./tsconfig.json source/index.ts"
+  },
+  "directories": {
+    "build": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RodrigoSaint/sharpening.git",
+    "directory": "packages/entity-generator"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "build"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0"
+  }
+}
