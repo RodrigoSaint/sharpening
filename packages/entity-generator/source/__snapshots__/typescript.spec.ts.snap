@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Typescript Get entity validation: getEntityValidation 1`] = `
+"const userSchema = yup.object().shape({
+	name: yup.string().required(),
+	email: yup.string(),
+	age: yup.number()
+})"
+`;
+
+exports[`Typescript Gets interface: getInterface 1`] = `
+"interface User {
+	name: string;
+	email: string;
+	age: number;
+}"
+`;

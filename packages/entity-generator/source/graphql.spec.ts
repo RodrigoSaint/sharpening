@@ -44,62 +44,38 @@ const entity: Entity = {
 
 describe("Graphql", () => {
   it("generates entity input", () => {
-    expect(getEntityInput(entity)).toBe(
-      `input UserInput {\n\tname: String\n\temail: String\n\tage: Int\n}`
-    );
+    expect(getEntityInput(entity)).toMatchSnapshot("getEntityInput");
   });
   it("generates entity type", () => {
-    expect(getEntityType(entity)).toBe(
-      `type User {\n\tname: String\n\temail: String\n\tage: Int\n}`
-    );
+    expect(getEntityType(entity)).toMatchSnapshot("getEntityType");
   });
   it("generates entity pagination", () => {
-    expect(getEntityPaginationType(entity)).toBe(
-      `type UserPagination {\n\tcollection: [User]\n\tcurrentPage: Int\n\tpageCount: Int\n}`
+    expect(getEntityPaginationType(entity)).toMatchSnapshot(
+      "getEntityPaginationType"
     );
   });
   it("get ListQuery", () => {
-    expect(getListQuery(entity)).toBe(`userCollection: [User]!`);
+    expect(getListQuery(entity)).toMatchSnapshot("ListQuery");
   });
   it("get DetailQuery", () => {
-    expect(getDetailQuery(entity)).toBe(`user(userId: String!): User!`);
+    expect(getDetailQuery(entity)).toMatchSnapshot("DetailQuery");
   });
   it("get PaginationQuery", () => {
-    expect(getPaginationQuery(entity)).toBe(
-      `userPagination(page: Int!): UserPagination!`
-    );
+    expect(getPaginationQuery(entity)).toMatchSnapshot("PaginationQuery");
   });
   it("get CreateMutation", () => {
-    expect(getCreateMutation(entity)).toBe(
-      `createUser(user: UserInput!): User!`
-    );
+    expect(getCreateMutation(entity)).toMatchSnapshot("CreateMutation");
   });
   it("get UpdateMutation", () => {
-    expect(getUpdateMutation(entity)).toBe(
-      `updateUser(user: UserInput!): User!`
-    );
+    expect(getUpdateMutation(entity)).toMatchSnapshot("UpdateMutation");
   });
   it("get DeleteMutation", () => {
-    expect(getDeleteMutation(entity)).toBe(
-      `deleteUser(userId: String!): Boolean!`
-    );
+    expect(getDeleteMutation(entity)).toMatchSnapshot("DeleteMutation");
   });
   it("get Query", () => {
-    expect(getQuery(entity)).toBe(
-      `type Query {
-\t${getPaginationQuery(entity)}
-\t${getListQuery(entity)}
-\t${getDetailQuery(entity)}
-}`
-    );
+    expect(getQuery(entity)).toMatchSnapshot("getQuery");
   });
   it("get Mutation", () => {
-    expect(getMutation(entity)).toBe(
-      `type Mutation {
-\t${getCreateMutation(entity)}
-\t${getUpdateMutation(entity)}
-\t${getDeleteMutation(entity)}
-}`
-    );
+    expect(getMutation(entity)).toMatchSnapshot("getMutation");
   });
 });

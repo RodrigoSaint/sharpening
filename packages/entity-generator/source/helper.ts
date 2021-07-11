@@ -11,3 +11,11 @@ export function getUnderscore(text) {
     .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
     .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 }
+
+export function getEntityNaming(name: string) {
+  return {
+    type: getCapital(name),
+    instance: getCamel(name),
+    file: getUnderscore(name),
+  };
+}

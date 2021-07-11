@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Graphql generates entity input: getEntityInput 1`] = `
+"input UserInput {
+	name: String
+	email: String
+	age: Int
+}"
+`;
+
+exports[`Graphql generates entity pagination: getEntityPaginationType 1`] = `
+"type UserPagination {
+	collection: [User]
+	currentPage: Int
+	pageCount: Int
+}"
+`;
+
+exports[`Graphql generates entity type: getEntityType 1`] = `
+"type User {
+	name: String
+	email: String
+	age: Int
+}"
+`;
+
+exports[`Graphql get CreateMutation: CreateMutation 1`] = `"createUser(user: UserInput!): User!"`;
+
+exports[`Graphql get DeleteMutation: DeleteMutation 1`] = `"deleteUser(userId: String!): Boolean!"`;
+
+exports[`Graphql get DetailQuery: DetailQuery 1`] = `"user(userId: String!): User!"`;
+
+exports[`Graphql get ListQuery: ListQuery 1`] = `"userCollection: [User]!"`;
+
+exports[`Graphql get Mutation: getMutation 1`] = `
+"type Mutation {
+	createUser(user: UserInput!): User!
+	updateUser(user: UserInput!): User!
+	deleteUser(userId: String!): Boolean!
+}"
+`;
+
+exports[`Graphql get PaginationQuery: PaginationQuery 1`] = `"userPagination(page: Int!): UserPagination!"`;
+
+exports[`Graphql get Query: getQuery 1`] = `
+"type Query {
+	userPagination(page: Int!): UserPagination!
+	userCollection: [User]!
+	user(userId: String!): User!
+}"
+`;
+
+exports[`Graphql get UpdateMutation: UpdateMutation 1`] = `"updateUser(user: UserInput!): User!"`;

@@ -1,0 +1,25 @@
+import { {{type}}, {{validation}} } from "entity/{{file}}";
+import { useSimpleForm } from "@rodrigosaint/form";
+import { useMutation } from "@rodrigosaint/graphql";
+
+const {{underscoredMutationName}} = `
+  mutation (${{instance}}: {{input}}!){
+    {{mutationName}}({{instance}}: ${{instance}}) {
+      _id
+    }
+  }`;
+
+export default function {{hook}}() {
+  const form = useSimpleForm<{{type}}>({{validation}});
+  const {{mutationName}} = useMutation<{ {{instance}}: {{type}} }>(
+    "{{instance}}",
+    {{underscoredMutationName}}
+  );
+
+  return {
+    onSubmit: form.handleSubmit(({{instance}}) =>
+      {{mutationName}}({ {{instance}} })
+    ),
+    form,
+  };
+}

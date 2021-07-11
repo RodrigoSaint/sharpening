@@ -1,10 +1,9 @@
 {
-  "name": "@rodrigosaint/entity-generator",
+  "name": "@rodrigosaint/graphql",
   "version": "0.0.1",
   "main": "./build/index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "ts-node --project ./tsconfig.json source/index.ts"
+    "build": "webpack --config ../../webpack.config.js"
   },
   "directories": {
     "build": "build"
@@ -12,7 +11,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/RodrigoSaint/sharpening.git",
-    "directory": "packages/entity-generator"
+    "directory": "packages/graphql"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -20,11 +19,12 @@
   "files": [
     "build"
   ],
-  "dependencies": {
-    "handlebars": "^4.7.7"
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
-    "@types/handlebars": "^4.1.0",
-    "prettier": "^2.3.2"
+    "swr": "^0.5.6"
   }
 }

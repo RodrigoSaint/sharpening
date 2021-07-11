@@ -19,21 +19,21 @@ function getGraphqlField(field: Field) {
 }
 
 export function getEntityType(entity: Entity) {
-  return `type ${entity.name} {\n${entity.fieldCollection
+  return `type ${getCapital(entity.name)} {\n${entity.fieldCollection
     .map(getGraphqlField)
     .join("\n")}
 }`;
 }
 
 export function getEntityInput(entity: Entity) {
-  return `input ${entity.name}Input {\n${entity.fieldCollection
+  return `input ${getCapital(entity.name)}Input {\n${entity.fieldCollection
     .map(getGraphqlField)
     .join("\n")}
 }`;
 }
 
 export function getEntityPaginationType(entity: Entity) {
-  return `type ${entity.name}Pagination {
+  return `type ${getCapital(entity.name)}Pagination {
 \tcollection: [${entity.name}]
 \tcurrentPage: Int
 \tpageCount: Int

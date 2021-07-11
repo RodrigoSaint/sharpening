@@ -1,0 +1,20 @@
+import Form from "@rodrigosaint/form";
+import Field from "@rodrigosaint/field";
+import Button from "@rodrigosaint/button";
+import { UseFormReturn } from "react-hook-form";
+
+import { {{type}} } from "entity/{{file}}";
+
+interface {{formProps}} {
+  form: UseFormReturn<{{type}}>;
+  onSubmit: () => Promise<any>;
+}
+
+export default function {{form}}(props: {{formProps}}) {
+    return (
+        <Form {...props}>
+            {{{fieldCollection}}}
+            <Button type="submit">submit</Button>
+        </Form>
+    );
+}
