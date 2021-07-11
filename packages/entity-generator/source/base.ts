@@ -19,4 +19,5 @@ export interface Entity {
   fieldCollection: Field[];
   actionCollection?: EntityAction[];
   formFieldCollection?: string[];
+  displayFieldCollection?: string[];
 }

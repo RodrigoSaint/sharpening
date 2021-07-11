@@ -1,0 +1,17 @@
+import List from "@rodrigosaint/list";
+
+import {{entityCard}} from "component/{{instance}}/card";
+
+interface {{componentProps}} {
+  collection: {{type}}[];
+}
+
+export default function {{component}}({query}: {{componentProps}}) {
+	return (
+			<List
+				collection={collection}
+				render={({{instance}}) => <{{entityCard}} {{instance}}={ {{instance}} } />}
+				getKey={({{instance}}) => {{instance}}._id }
+		/>
+	)
+}

@@ -1,0 +1,18 @@
+import { ManagedPagination, Page } from "@rodrigosaint/pagination";
+
+import {{entityCard}} from "component/{{instance}}/card";
+
+interface {{componentProps}} {
+  query: (pageNumber: Number) => Promise<Page<{{type}}>>;
+}
+
+export default function {{component}}({query}: {{componentProps}}) {
+	return (
+			<ManagedPagination
+				query={query}
+				render={({{instance}}) => <{{entityCard}} {{instance}}={ {{instance}} } />}
+				getKey={({{instance}}) => {{instance}}._id }
+				renderSkeleton={() => <{{entityCard}} />}
+		/>
+	)
+}

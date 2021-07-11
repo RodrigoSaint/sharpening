@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List renders list properly: getCard 1`] = `
+"import Card from \\"@rodrigosaint/card\\";
+
+interface UserCardProps {
+  user: User;
+}
+
+export default function UserCard({ user }: UserCardProps) {
+  return (
+    <Card>
+      {user.name}
+      {user.email}
+    </Card>
+  );
+}
+"
+`;
+
+exports[`List renders list properly: getList 1`] = `
+"import List from \\"@rodrigosaint/list\\";
+
+import UserCard from \\"component/user/card\\";
+
+interface UserListProps {
+  collection: User[];
+}
+
+export default function UserList({ query }: UserListProps) {
+  return (
+    <List
+      collection={collection}
+      render={(user) => <UserCard user={user} />}
+      getKey={(user) => user._id}
+    />
+  );
+}
+"
+`;
+
+exports[`List renders pagination properly: getPagination 1`] = `
+"import { ManagedPagination, Page } from \\"@rodrigosaint/pagination\\";
+
+import UserCard from \\"component/user/card\\";
+
+interface UserPaginationProps {
+  query: (pageNumber: Number) => Promise<Page<User>>;
+}
+
+export default function UserPagination({ query }: UserPaginationProps) {
+  return (
+    <ManagedPagination
+      query={query}
+      render={(user) => <UserCard user={user} />}
+      getKey={(user) => user._id}
+      renderSkeleton={() => <UserCard />}
+    />
+  );
+}
+"
+`;

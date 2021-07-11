@@ -9,6 +9,12 @@ export function getCamel(text) {
 export function getUnderscore(text) {
   return text
     .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
+    .replace(/([A-Z])/g, ([letter]) => `_${letter.toLowerCase()}`);
+}
+
+export function getDashed(text) {
+  return text
+    .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
     .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 }
 
@@ -16,6 +22,6 @@ export function getEntityNaming(name: string) {
   return {
     type: getCapital(name),
     instance: getCamel(name),
-    file: getUnderscore(name),
+    file: getDashed(name),
   };
 }
