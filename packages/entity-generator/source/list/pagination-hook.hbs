@@ -1,0 +1,22 @@
+import { useCallback } from "react";
+import { Page } from "@rodrigosaint/pagination";
+import { queryGraphql } from "@rodrigosaint/graphql";
+
+import { {{type}} } from "entity/{{file}}";
+
+const {{queryConstName}} = `
+  query ($page: Int!) {
+    {{queryName}}(page: $page) {
+      currentPage
+      pageCount
+      collection {
+        {{fields}}
+      }
+    }
+  }
+`;
+
+export default function {{hook}} () {
+  const query = useCallback((page: number) => queryGraphql<Page<{{type}}>>({{queryConstName}}, {page}), []);
+  return { query };
+}

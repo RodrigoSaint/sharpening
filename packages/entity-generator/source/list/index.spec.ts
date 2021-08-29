@@ -1,5 +1,11 @@
 import { Entity } from "../base";
-import { getPagination, getList, getCard } from ".";
+import {
+  getPagination,
+  getList,
+  getCard,
+  getPaginationHook,
+  getListHook,
+} from ".";
 
 const entity: Entity = {
   name: "User",
@@ -32,5 +38,12 @@ describe("List", () => {
   });
   it("renders list properly", () => {
     expect(getCard(entity)).toMatchSnapshot("getCard");
+  });
+  it("Paginate", () => {
+    expect(getPaginationHook(entity)).toMatchSnapshot("getPaginationHook");
+  });
+
+  it("List", () => {
+    expect(getListHook(entity)).toMatchSnapshot("getListHook");
   });
 });

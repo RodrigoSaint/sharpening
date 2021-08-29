@@ -1,0 +1,18 @@
+import { useCallback } from "react";
+import { useQuery } from "@rodrigosaint/graphql";
+
+import { {{type}} } from "entity/{{file}}";
+
+const {{queryConstName}} = `
+  query {
+    {{queryName}} {
+        {{fields}}
+    }
+  }
+`;
+
+type {{type}}List = {{type}}[]
+
+export default function {{hook}} () {
+  return useQuery<{}, { {{queryName}}: {{type}}List }>("{{instance}}", {{queryConstName}}, {  });
+}

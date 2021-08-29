@@ -1,7 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`List List: getListHook 1`] = `
+"import { useCallback } from \\"react\\";
+import { useQuery } from \\"@rodrigosaint/graphql\\";
+
+import { User } from \\"entity/user\\";
+
+const USER_LIST_QUERY = \`
+  query {
+    userCollection {
+        name
+        email
+    }
+  }
+\`;
+
+type UserList = User[];
+
+export default function useUserList() {
+  return (
+    useQuery < {}, { userCollection: UserList } > (\\"user\\", USER_LIST_QUERY, {})
+  );
+}
+"
+`;
+
+exports[`List Paginate: getPaginationHook 1`] = `
+"import { useCallback } from \\"react\\";
+import { Page } from \\"@rodrigosaint/pagination\\";
+import { queryGraphql } from \\"@rodrigosaint/graphql\\";
+
+import { User } from \\"entity/user\\";
+
+const USER_PAGINATION_QUERY = \`
+  query ($page: Int!) {
+    userPagination(page: $page) {
+      currentPage
+      pageCount
+      collection {
+        name
+        email
+      }
+    }
+  }
+\`;
+
+export default function useUserPagination() {
+  const query = useCallback(
+    (page: number) =>
+      queryGraphql < Page < User >> (USER_PAGINATION_QUERY, { page }),
+    []
+  );
+  return { query };
+}
+"
+`;
+
 exports[`List renders list properly: getCard 1`] = `
 "import Card from \\"@rodrigosaint/card\\";
+
+import { User } from \\"entity/user\\";
 
 interface UserCardProps {
   user: User;
@@ -19,7 +77,8 @@ export default function UserCard({ user }: UserCardProps) {
 `;
 
 exports[`List renders list properly: getList 1`] = `
-"import List from \\"@rodrigosaint/list\\";
+"import { User } from \\"entity/user\\";
+import List from \\"@rodrigosaint/list\\";
 
 import UserCard from \\"component/user/card\\";
 
@@ -40,7 +99,8 @@ export default function UserList({ query }: UserListProps) {
 `;
 
 exports[`List renders pagination properly: getPagination 1`] = `
-"import { ManagedPagination, Page } from \\"@rodrigosaint/pagination\\";
+"import { User } from \\"entity/user\\";
+import { ManagedPagination, Page } from \\"@rodrigosaint/pagination\\";
 
 import UserCard from \\"component/user/card\\";
 

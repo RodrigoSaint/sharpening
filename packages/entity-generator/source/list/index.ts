@@ -58,3 +58,39 @@ export function getCard(entity: Entity) {
     })
   );
 }
+
+export function getPaginationHook(entity: Entity) {
+  const { type, file, instance } = getEntityNaming(entity.name);
+  const template = compile(
+    readFileSync(resolve(__dirname, "./pagination-hook.hbs"), "utf-8")
+  );
+  return format(
+    template({
+      type,
+      file,
+      instance,
+      queryConstName: `${type.toUpperCase()}_PAGINATION_QUERY`,
+      queryName: `${instance}Pagination`,
+      hook: `use${type}Pagination`,
+      fields: entity.displayFieldCollection.join("\n        "),
+    })
+  );
+}
+
+export function getListHook(entity: Entity) {
+  const { type, file, instance } = getEntityNaming(entity.name);
+  const template = compile(
+    readFileSync(resolve(__dirname, "./list-hook.hbs"), "utf-8")
+  );
+  return format(
+    template({
+      type,
+      file,
+      instance,
+      queryConstName: `${type.toUpperCase()}_LIST_QUERY`,
+      queryName: `${instance}Collection`,
+      hook: `use${type}List`,
+      fields: entity.displayFieldCollection.join("\n        "),
+    })
+  );
+}
