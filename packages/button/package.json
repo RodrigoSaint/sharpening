@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/button",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack --config ../../webpack.config.js"
@@ -24,7 +24,7 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/style-utils": "^0.0.12",
-    "@rodrigosaint/text-essentials": "^0.0.12"
+    "@rodrigosaint/style-utils": "^0.0.13",
+    "@rodrigosaint/text-essentials": "^0.0.13"
   }
 }

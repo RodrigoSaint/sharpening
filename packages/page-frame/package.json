@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/page-frame",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack --config ../../webpack.config.js"

@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/image-selection",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack --config ../../webpack.config.js"
@@ -24,12 +24,12 @@
     "styled-components": "^5.3.0"
   },
   "dependencies": {
-    "@rodrigosaint/button": "^0.0.12",
-    "@rodrigosaint/input": "^0.0.12",
-    "@rodrigosaint/managed-image": "^0.0.12",
-    "@rodrigosaint/modal": "^0.0.12",
-    "@rodrigosaint/pagination": "^0.0.12",
-    "@rodrigosaint/text-essentials": "^0.0.12",
+    "@rodrigosaint/button": "^0.0.13",
+    "@rodrigosaint/input": "^0.0.13",
+    "@rodrigosaint/managed-image": "^0.0.13",
+    "@rodrigosaint/modal": "^0.0.13",
+    "@rodrigosaint/pagination": "^0.0.13",
+    "@rodrigosaint/text-essentials": "^0.0.13",
     "react-hook-form": "^7.9.0"
   }
 }

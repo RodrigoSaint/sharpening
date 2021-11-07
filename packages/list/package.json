@@ -1,6 +1,6 @@
 {
   "name": "@rodrigosaint/list",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./build/index.js",
   "scripts": {
     "build": "webpack --config ../../webpack.config.js"
@@ -25,6 +25,6 @@
   },
   "gitHead": "04a9f9ee4f6cedf267d4ee5ba2eab8ebff5a8004",
   "dependencies": {
-    "@rodrigosaint/style-utils": "^0.0.12"
+    "@rodrigosaint/style-utils": "^0.0.13"
   }
 }
