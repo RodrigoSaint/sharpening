@@ -3,7 +3,8 @@
   "version": "0.0.13",
   "main": "./build/index.js",
   "scripts": {
-    "build": "webpack --config ../../webpack.config.js"
+    "build": "webpack --config ../../webpack.config.js",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
