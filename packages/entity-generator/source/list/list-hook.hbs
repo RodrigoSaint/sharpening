@@ -14,5 +14,6 @@ const {{queryConstName}} = `
 type {{type}}List = {{type}}[]
 
 export default function {{hook}} () {
-  return useQuery<{}, { {{queryName}}: {{type}}List }>("{{instance}}", {{queryConstName}}, {  });
+  const {data} = useQuery<{}, { {{queryName}}: {{type}}List }>("{{instance}}", {{queryConstName}}, {  });
+  return data;
 }
